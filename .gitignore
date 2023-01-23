@@ -1,0 +1,6 @@
+venv/
+/.idea
+*.pkl
+*.h5
+data/
+.ipynb_checkpoints/
