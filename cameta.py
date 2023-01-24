@@ -14,10 +14,10 @@ test_path = r'C:\Users\lasya\OneDrive\Desktop\Masters\Deep learning\project\Deep
 
 name = input("Enter the person's name")
 
-if not os.path.exists(os.path.join(train_path,name):
+if not os.path.exists(os.path.join(train_path,name)):
     os.makedirs(os.path.join(train_path,name))
 
-if not os.path.exists(os.path.join(test_path, name):
+if not os.path.exists(os.path.join(test_path, name)):
     os.makedirs(os.path.join(test_path, name))
 
 while True:
@@ -34,16 +34,18 @@ while True:
         break
     elif k%256 == 32:
         # SPACE pressed
-        img_name = r"C:\Users\lasya\OneDrive\Desktop\Masters\Deep learning\project\Deep-Learning-Project\Face-Images\Face Images\Final Training Images\{}\{}_{}.png".format(name,name,img_counter)
 
-        cv2.imwrite(img_name, frame)
-
-        print("{} written!".format(img_name))
 
         if img_counter >=15:
             img_name = r"C:\Users\lasya\OneDrive\Desktop\Masters\Deep learning\project\Deep-Learning-Project\Face-Images\Face Images\Final Testing Images\{}\{}_{}.png".format(name, name, img_counter)
 
             cv2.imwrite(img_name, frame)
+            print("{} written!".format(img_name))
+        else:
+            img_name = r"C:\Users\lasya\OneDrive\Desktop\Masters\Deep learning\project\Deep-Learning-Project\Face-Images\Face Images\Final Training Images\{}\{}_{}.png".format(name, name, img_counter)
+
+            cv2.imwrite(img_name, frame)
+
             print("{} written!".format(img_name))
 
 
